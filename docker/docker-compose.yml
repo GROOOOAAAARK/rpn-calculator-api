@@ -8,11 +8,11 @@ services:
     ports:
       - 27017:27017
     networks:
-      - ayomi-network
-  ayomi-api:
+      - rpn-network
+  rpn-api:
     depends_on:
       - mongo
-    image: ayomi-api
+    image: rpn-api
     # build:
     #   context: ..
     #   dockerfile: docker/app.Dockerfile
@@ -21,8 +21,8 @@ services:
     env_file:
       - .envrc
     networks:
-      - ayomi-network
+      - rpn-network
 
 networks:
-  ayomi-network:
+  rpn-network:
     external: true
